@@ -12,8 +12,8 @@ import (
 // injects it); "/" returns 200 so the health check + reachability probe pass.
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.WriteHeader(http.StatusOK)
-		fmt.Fprintln(w, "Railpack Go Demo — v4-RECOVERED OK")
+		w.WriteHeader(http.StatusServiceUnavailable) // v5-UNHEALTHY: simulated bad boot (503 on health path)
+		fmt.Fprintln(w, "Railpack Go Demo — v5 UNHEALTHY (503)")
 	})
 	port := os.Getenv("PORT")
 	if port == "" {
