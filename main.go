@@ -13,7 +13,7 @@ import (
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
-		fmt.Fprintln(w, "Railpack Go Demo — v1 OK")
+		fmt.Fprintln(w, "Railpack Go Demo — v2-WEBHOOK-CD OK")
 	})
 	port := os.Getenv("PORT")
 	if port == "" {
