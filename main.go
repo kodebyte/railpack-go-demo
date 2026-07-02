@@ -15,6 +15,7 @@ func main() {
 		w.WriteHeader(http.StatusOK)
 		fmt.Fprintln(w, "Railpack Go Demo — v2-WEBHOOK-CD OK")
 	})
+	thisIsADeliberateCompileError()  // v3-BROKEN: undefined function → build must fail
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
